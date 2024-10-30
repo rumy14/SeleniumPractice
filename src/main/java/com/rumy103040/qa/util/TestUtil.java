@@ -21,7 +21,7 @@ public class TestUtil extends TestBase {
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
 
-	public static String TESTDATA_SHEET_PATH = (System.getProperty("user.dir")+"/src/main/java/com/rumy103040/qa/testdata/FreeCrmTestData.xlsx");
+	public static String TESTDATA_SHEET_PATH = (System.getProperty("user.dir")+"/src/main/java/com/rumy103040/qa/testdata/SauceDemoLoginTestData.xlsx");
 
 	static Workbook book;
 	static Sheet sheet;
@@ -61,7 +61,7 @@ public class TestUtil extends TestBase {
 	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
-		System.out.println("Check the Screenshot No.xx");
+		//System.out.println("Check the Screenshot No.xx");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
 	}
 

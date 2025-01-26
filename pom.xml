@@ -2,18 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>SeleniumPractice</groupId>
-	<artifactId>SeleniumPractice</artifactId>
+	<groupId>DemoAdminPanel</groupId>
+	<artifactId>DemoAdminPanel</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SeleniumPractice</name>
+	<name>DemoAdminPanel</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		 <maven.compiler.source>1.6</maven.compiler.source>
-                  <maven.compiler.target>1.6</maven.compiler.target>
+		 <maven.compiler.source>1.8</maven.compiler.source>
+         <maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -92,13 +92,19 @@
 		    <version>5.1.2</version>
 		</dependency>
 		
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api --> 
 		<dependency> 
 			<groupId>org.apache.logging.log4j</groupId> 
 			<artifactId>log4j-api</artifactId> 
 			<version>2.17.2</version> 
 		</dependency> 
-		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core--> 
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core> --> 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>

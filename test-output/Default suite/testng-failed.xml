@@ -6,6 +6,7 @@
       <class name="com.saucedemo.qa.testcases.SauceDemoLoginPageTest">
         <methods>
           <include name="loginPageTitleTest"/>
+          <include name="robotLogoImageTest"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>

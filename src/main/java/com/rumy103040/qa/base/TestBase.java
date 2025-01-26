@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
@@ -39,14 +40,26 @@ public class TestBase {
 	
 	public static void initialization(){
 		String browserName = prop.getProperty("browser");
-		
+		String os = System.getProperty("os.name").toLowerCase();
 		if(browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/Drivers/chromedriver.exe");	
+			
+			if (os.contains("win")) {
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/Drivers/chromedriver.exe");
+			}else System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "/Drivers/chromedriver");
+				
 			driver = new ChromeDriver(); 
 		}
 		else if(browserName.equals("FF")){
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+ "/Drivers/geckodriver.exe");	
+			if (os.contains("win")) {
+				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+ "/Drivers/geckodriver.exe");
+			}else System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+ "/Drivers/geckodriver");
+				
 			driver = new FirefoxDriver(); 
+		}else if(browserName.equals("edge")){
+			if (os.contains("win")) {
+				System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+ "/Drivers/msedgedriver.exe");
+			}else System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+ "/Drivers/msedgedriver");
+			driver = new EdgeDriver(); 
 		}
 		
 		
